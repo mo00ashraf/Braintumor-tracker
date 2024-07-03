@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+
+    <!-- using javascript AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+    <meta charset="UTF-8">
+<!-- Render all element in normal mode File -->
+<link rel="stylesheet" type="text/css" href="{% static 'FinalApp/normalizeA.css' %}">
+<!-- Font Awesome File -->
+<link rel="stylesheet" type="text/css" href="{% static 'FinalApp/allA.min.css' %}">
+<!-- Main Css File -->
+<link rel="stylesheet" type="text/css" href="{% static 'FinalApp/masterA.css' %}">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Brainware</title>
+</head>
+<style>
+    .mission-bcontent img {
+    width: 450px;
+    top: -100px;
+    margin-top: -700px;
+    margin-left: 550px;
+    position: relative;
+    z-index: 1;
+  }  
+  .mission {
+    padding: var(--main-padding-section);
+    background-color: #EBE7F8;
+    
+
+}
+
+.mission .container .mission-content {
+    width: 968px;
+    height: 600px;
+    background: #FFFFFF;
+    box-shadow: -15px 20px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    margin: 0 auto;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mission .container .mission-content p {
+    width: 400px;
+    height: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    display: flex;
+    align-items: left;
+    letter-spacing: 0.02em;
+    color: #542E82;
+    margin-top: -50px;
+    position: absolute;
+    top: 1800px;
+    left: 380px;
+}
+
+
+.choose {
+    padding: var(--main-padding-section);
+
+}
+
+.choose .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(400px , 1fr));
+    gap: 10px;
+}
+
+.choose .cards .card {
+    width: 531px;
+    height: 120px;
+    background: #FFFFFF;
+    box-shadow: -22px 17px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 31px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 30px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    cursor: pointer;
+    margin-top: 180px;
+}
+
+.choose .cards .card:hover {
+    border: 2px solid #683AA0;
+}
+
+.choose .cards .card .number {
+    background: #4E346F;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.choose .cards .card p {
+    width: 416px;
+    height: 118px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #542E82;
+
+}
+
+.we-are {
+    padding: var(--main-padding-section);
+    margin-right: -400px;
+}
+
+.we-are .we-are-content {
+    width: 700px;
+    height: 400px;
+    background: #3D1C65;
+    box-shadow: -15px 20px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.we-are .we-are-content::after {
+    content: url(../images/Hand-drawn-Arrow-icon-premium-vector-PNG\ 2.png); 
+    position: absolute;
+    top: -213px;
+    right: -100px;
+}
+
+.we-are .we-are-content p {
+    width: 600px;
+    height: 300px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+
+.we-are img{
+    position: absolute;
+    left: 80px;
+    top: 3800px;
+    width: 450px;
+    height: 400px;
+}
+.footer{
+	background-color: #eee;
+    padding: var(--main-padding-section);
+    height: 70vh;
+}
+</style>
+<body>
+
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <!-- anchor element to scroll to top -->
+    <a href="#home">
+        <i class="go-top" class="fa-solid fa-arrow-up"></i>
+    </a>
+    <!-- Nav bar -->
+    <header>
+        <div class="container">
+            <div class="logo-links">
+                <a href="#">
+                    <img src="{% static 'images/logo1.png' %}" alt="My Image">
+                </a>
+                <ul>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a href="{% url 'notification' %}">Profile</a></li>
+                    <li><a href="{% url 'AboutUs' %}">about us</a></li>
+                    <!-- <li><a href="">services</a></li>
+                    <li><a href="">contact</a></li>
+                    <li class="active"><a href="index.html">about us</a></li> -->
+                </ul>
+            </div>
+            <div class="actions">
+                {% if not is_authenticated %}
+                <a  href="{% url 'login' %}"><button   class="signup">login</button></a>  
+                 <a href="{% url 'sign_up' %}"><button class="signup">sign up</button></a>
+                 {% endif %}
+        </div>
+    </header>
+    <!-- main bage -->
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="intro-title">
+                        <p>About Brainware<p>
+                        <p class="title"  data-aos="fade-right"  data-aos-duration="3000">"Your Brain Health is Our Top Priority,  Learn About Our Website and Services"</p>
+                        <p  data-aos="zoom-in-right"  data-aos-duration="3000">We are students at the Faculty of Computers and Information, suez canal University who wants to help people  </p>
+                    </div>
+                    <div class="image">
+                        <img src="{% static 'images/work.gif' %}" alt="My Image"  width="550px"   data-aos="zoom-in-left"  data-aos-duration="3000" >
+                      
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- what we do -->
+        <section class="do">
+            <div class="container">
+                <h1 class="heading">What We Do?</h1>
+                <div class="do-content">
+                    <p>Provide comprehensive information on brain tumor detection, including diagnosis.</p>
+                    <p>Use advanced imaging technology, such as MRI , to detect brain tumors.</p>
+                    <p>Offer analysis and interpretation of imaging results to accurately classify and segment brain tumors and send results e-mail.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Our Mission -->
+        <section class="mission">
+            <div class="container">
+                <h1 class="heading">Our Mission</h1>
+                
+                <div class="mission-bcontent">
+                    <div class="mission-content">
+                        <p data-aos="fade-right"  data-aos-duration="2000" >
+                            Our mission is to improve brain health by providing advanced technology and expertise for the accurate detection, classification, and segmentation of brain tumor, We aim to detect and predict brain tumors at an early stage to prevent malignancy and achieve better patient outcomes. Our system assists medical professionals in early detection and diagnosis, highlighting the importance of new technologies in medical imaging analysis.
+                            By providing quick and accurate results, and we aim to save time, effort, and resources for both patients and doctors. 
+                        </p>
+                    </div>
+                    <img src="{% static 'images/image_processing20200122-16177-1yn6h9i.gif' %}" alt="My Image"  width="550px"   data-aos="zoom-in-left"  data-aos-duration="3000" >
+                      
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us? -->
+        <section class="choose">
+            <div class="container">
+                <h1 class="heading">why choose us?</h1>
+                <div class="cards">
+                    <div class="card"data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="number">
+                            1
+                        </div>
+                        <p >
+                            Provides a user-friendly interface and easy use.
+                        </p>
+                    </div>
+                    <div class="card"class="card"data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="number">
+                            2
+                        </div>
+                        <p>
+                            Saves time for  patients by providing quick and accurate results.
+                        </p>
+                    </div>
+                    <div class="card"  class="card"data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="number">
+                            3
+                        </div>
+                        <p>
+                            Reduce patient anxiety and stress by providing accurate and timely results.
+                        </p>
+                    </div>
+                    <div class="card" class="card"data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="number">
+                            4
+                        </div>
+                        <p>
+                            Make advanced technology and expertise accessible and cost-effective.
+                        </p>
+                    </div>
+                    <div class="card" class="card"data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="number">
+                            5
+                        </div>
+                        <p>
+                            Reduce the risk of misdiagnosis with advanced technology and expertise.
+                        </p>
+                    </div>
+                    <div class="card" class="card"data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
+                        <div class="number">
+                            6
+                        </div>
+                        <p>
+                            Ensure accurate detection and segmentation of brain tumor with our website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- who we are -->
+        <section class="we-are">
+            <div class="container">
+                <h1 class="heading">who we are?</h1>
+                <div class="we-are-content">
+                    <p  data-aos="zoom-in-left"  data-aos-duration="3000"   >
+                        We are students at the Faculty of Computers and Information, suez canal University  <br>We are trying to create a simple and easy-to-use site that is highly efficient and saves time to reassure the patient
+                        about his condition by sending the results of the MRI analysis
+                    </p>
+                    
+                </div>
+                <img src="{% static 'images/programer.gif' %}" alt="My Image"  width="550px"   data-aos="zoom-in-right"  data-aos-duration="3000" >
+                      
+            </div>
+        </section>
+        <!-- footer -->
+        <section class="blank">
+            <div class="container">
+                <div class="box">
+                    <h3>contact us</h3>
+                    <p>If you want to know more about this project or if you have any question</p>
+                    <a href = "mailto: brainware112@gmail.com"> <button>Send Email</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="{% static 'images/logo2.png' %}" alt="">
+            <div class="row">
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">who we are</a></li>
+                        <li><a href="#">our vision </a></li>
+                        <li><a href="#">our core values </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#">Medical Providers</a></li>
+                        <li><a href="#">doctors</a></li>
+                        <li><a href="#">hospitals</a></li>
+                        <li><a href="#">clinics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#">Terms& Privacy</a></li>
+                        <li><a href="#">privacy policy </a></li>
+                        <li><a href="#">terms of use  </a></li>
+                        <li><a href="#">Follow us </a>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <div class="cont">
+                        <div class="heading">
+                            <ul>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Help center </a></li>
+                                 <li><a href="#">Contact us </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </form>
+</body>
+</html>

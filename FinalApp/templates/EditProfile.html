@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/css_edit/normalize.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/css_edit/min.all.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/css_edit/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Brainware</title>
+</head>
+<style>
+  .image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* CSS for the custom file input */
+.custom-input {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px 20px;
+  background-color: #3D1C65;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-input input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.f {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 614px;
+  height: 564px;
+  background: #E8E8E8;
+  box-shadow: -6px 6px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 45px;
+  padding: 2rem;
+  position: relative;
+  left: 500px;
+  top: -20px;
+}
+
+
+
+.f input[type="submit"] {
+  display: block;
+  width: 300px;
+  height: 60px;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.f input[type="submit"]:hover {
+  background-color: #123456; /* Change the background color on hover if desired */
+}
+
+
+
+
+
+
+</style>
+
+<body>
+
+  <header>
+    <div class="parent-header">
+      <div class="logo">
+        <img src="{% static 'images/logooo.png' %}" alt="My Image">
+      </div>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'AboutUs' %}">About Us</a></li>
+        <li ><a href="{% url 'notification' %}" >Profile</a></li>
+        <li ><a href="{% url 'logout' %}">Log Out</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="f">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.firstname.id_for_label }}">{{ form.firstname.label }}</label>
+      {{ form.firstname }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.lastname.id_for_label }}">{{ form.lastname.label }}</label>
+      {{ form.lastname }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+      {{ form.email }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.profile_picture.id_for_label }}" class="custom-input-label">Choose file</label>
+      {{ form.profile_picture }}
+    </div>
+    <input type="submit" value="Save" width="200px" style="margin-top: 10px;">
+  </form>
+</div>
+
+<script>
+  document.querySelector('.custom-input input[type="file"]').addEventListener('change', function(e) {
+    var fileName = e.target.files[0].name;
+    document.querySelector('.custom-input').textContent = fileName;
+  });
+</script>
+  
+    
+    <main>
+      <nav>
+        
+        {% if user.userprofile.profile_picture %}
+        
+        <img src="{{ user.userprofile.profile_picture.url }}" width="120" height="120" class="image-container" style="margin-top: -75px;" style="border-radius: 50%;" />
+
+        {% else %}
+        <img src="{% static 'img/Ellipse 1.png' %}" alt="" class="image-container" />
+        {% endif %}
+        <div class="links">
+          <h2><a id="pro" href="#">{{request.user.first_name}} {{request.user.last_name}}</h2>
+          <a href="{% url 'notification' %}">
+            <span>
+              <img src="{% static 'images/icons/Vector.png' %}" alt="My Image">
+              
+            </span>
+            <p>Notifications</p>
+          </a>
+          <a href="{% url 'HistoryD' %}">
+            <span>
+              <img src="{% static 'images/icons/archivebook.png' %}" alt="My Image">
+            </span>
+            <p>History</p>
+          </a>
+          <a href="#">
+            <span>
+              <img src="{% static 'images/icons/statusup.png' %}" alt="My Image">
+             
+            </span>
+            <p>Follow up</p>
+          </a>
+          <a href="#">
+            <span>
+              <img src="{% static 'images/icons/people.png' %}" alt="My Image">
+            </span>
+            <p>Support Community</p>
+          </a>
+          <a href="#">
+            <span>
+              <img src="{% static 'images/icons/useredit.png' %}" alt="My Image">
+            </span>
+            <p class="active-link">Edit Profile</p>
+          </a>
+          <a href="#">
+            <span>
+              <img src="{% static 'images/icons/setting2.png' %}" alt="My Image">
+            </span>
+            <p>Settings</p>
+          </a>
+        </div>
+      </nav>
+      </main>
+
+<!-- 
+
+      <section>
+
+        <h2>My Profile</h2>
+        <a id="pro" href="#">{{request.user.username}}
+          <h2>{{ user.userprofile.name }}</h2>
+          <h2>{{ user.userprofile.email }}</h2> -->
+
+
+<!-- <form action="#" method="POST" enctype="multipart/form-data">
+          {% csrf_token %} -->
+          <!-- <input type="file" name="profile_picture" class="customfile"> -->
+         
+        <!-- </form>
+        <div class="content">
+          <div class="image-container">
+            <img src="./images/pro.png" alt="">
+            <img class="imgIcon" src="./images/icons/galleryedit.png" alt="">
+          </div>
+          <form method="POST"> -->
+            {% csrf_token %}
+            
+              <!-- <div>
+                <label for="Name">Name</label>
+                <input id="firstName" type="text" name="name" value="{{ user.userprofile.name }}">
+              </div> -->
+             
+            </div>
+            
+            <!-- <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" value="{{ request.userprofile.email }}">
+            </div> -->
+            <div class="inputs-container">
+         
+                
+              <!-- <div>
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" value="{{ user.username }}">
+              </div> -->
+            <!-- </div> -->
+            <!-- <input style="cursor: pointer;" type="submit" value="Save"> -->
+          </form>
+        </div>
+      </section>
+    </main>
+  </form>
+</body>
+
+</html>

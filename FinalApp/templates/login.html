@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/login-ui.css' %}">
+    <title>log in to brainware</title>
+</head>
+<style>
+.messages {
+  list-style: none;
+  padding: 0;
+}
+
+.messages li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #F0F0F0;
+  color: #333333;
+}
+
+.messages li.error {
+  background-color: #FFCCCC;
+  color: #3D1C65;
+}
+
+.messages li.success {
+  background-color: #CCFFCC;
+  color: #006600;
+}
+
+
+.signup {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: var(--main-color);
+    display: flex;
+  align-items: center;
+  gap: 40px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  cursor: pointer;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+.inputbox input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  outline: none;
+  color: #fff;
+  height: 50px;
+  left: 20px;
+  font-size: 0.8em;
+  background: #3D1C65; /* Replace with your desired color code */
+  font-weight: 50;
+}
+
+
+
+</style>
+<body>
+    <form  action="#" method="POST">
+        {% csrf_token %}
+
+
+      <!-- Nav bar -->
+      <header>
+        <div class="container">
+            <div class="logo-links">
+                <a href="#">
+                    <img src="{% static 'images/logo1.png' %}" alt="My Image">
+                </a>
+                <ul>
+                    <li><a href="{% url 'home' %}" class="home">home</a></li>
+                    <li><a href="{% url 'AboutUs' %}">about us</a></li>
+                    <!-- <li><a href="#services">services</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="../about_us_page/index.html">about us</a></li> -->
+                    <!-- <li><a href="#">profile</a></li> -->
+                </ul>
+            </div>
+            <div class="actions">
+                <a href="{% url 'sign_up' %}" class="signup home">sign up</a>
+            </div>
+        </div>
+        
+    </header>
+    
+  <!--     ################  the box  -->
+    <div class="box">
+        
+        <h1> welcome back! </h1>
+        <a href="home.html">
+            <button onclick="document.getElementById('myInput').value = ''" style="text-decoration: none;" type="submit">Log in </button></a>
+        
+        
+        <div class="inputbox">
+            <input type="username"  id="email" name="uname" required="required">
+            <span> username </span>
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        </div>
+    
+    
+        <div class="inputbox">
+            <input type="password" id="password" name="pass" required="required">
+            <span> Password </span>
+        </div>
+       
+
+        <!-- <h2> Did you forget your password?</h2> -->
+        <img src="{% static 'images/image_processing20190905-23286-kneer4.gif' %}" alt="My Image">
+       
+        
+       
+    </div>
+    <div class="googlebutton">
+        
+        
+      <button class="button">
+          <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
+          <path fill="#4285F4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"></path>
+          <path fill="#34A853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"></path>
+          <path fill="#FBBC05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"></path>
+          <path fill="#EB4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"></path>
+        </svg>
+          Continue with Google
+        </button> 
+        <img src="images/login.png" alt="">
+        <h3> to create a new account </h3>
+        <a href="{% url 'sign_up' %}">Click here  </a>
+
+        
+  </div>
+
+ 
+        
+        
+     
+      
+
+          
+
+    
+    </form>
+    
+
+<!-- Your login form here -->
+
+</body>
+</html>

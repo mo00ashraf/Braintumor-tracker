@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Render all element in normal mode File -->
+    <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/cssC/normalize.css' %}">
+    <!-- Font Awesome File -->
+    <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/cssC/all.min.css' %}">
+    <!-- Main Css File -->
+    <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/cssC/master.css' %}">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Brainware</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  .mes_confirm .content .cancel {
+    display: inline-block;
+    width: 180px;
+    height: 65px;
+    font-size: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 62px;
+    font-weight: medium;
+    color: #542E82;
+    background-color: white;
+    border-radius: 31px;
+    border: 2px solid #542E82;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.mes_confirm .content .submit{
+    width: 180px;
+    height: 62px;
+    font-size: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 40px;
+    font-weight: medium;
+    color:white;
+    border: none;
+    background-color:#0BDC49;
+    border-radius: 24px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    margin-bottom: 40px;
+    margin-left: -10px;
+}
+.mes_confirm .content button{
+    margin: 40px;
+}
+.mes_confirm .content button:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+
+.mes_confirm .content .cancel:hover {
+    background-color: #542E82;
+    color: white;
+}
+
+.mes_confirm{
+    padding: var(--main-padding-section);
+}
+.mes_confirm .container{
+    box-sizing: border-box;
+    width: 800px;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#3D1C65;
+    border-radius: 37px;
+    text-align: center;
+    box-shadow: -4px 5px 4px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+
+}
+.mes_confirm .content p {
+  width: 500px;
+  height: 10px;
+  color: white;
+  font-size: 30px;
+  font-family: 'Inter';
+  font-style: normal;
+  line-height: 40px;
+  font-weight: 600;
+  padding: 30px 0px;
+  margin: 60px auto 0; /* Adjust margin-top value to move the sentence away from the top */
+}
+
+.mes_confirm .content img {
+  max-width: 250px; /* Adjust the maximum width as needed */
+  max-height: 250px; /* Adjust the maximum height as needed */
+  margin: 110px 0 0; /* Adjust margin-top value to move the image to the top */
+  padding: 30px;
+}
+
+</style>
+<body>
+    <form  action="#" method="POST">
+        {% csrf_token %}
+    <!-- anchor element to scroll to top -->
+    <a href="#" class="go-top"><i class="fa-solid fa-arrow-up"></i></a>
+     <!-- Nav bar -->
+     <header>
+        <div class="container">
+            <div class="logo-links">
+                <a href="#">
+                    <img src="{% static 'images/logo1.png' %}" alt="My Image">
+                </a>
+                <ul>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a href="{% url 'notification' %}">Profile</a></li>
+                    <li><a href="{% url 'AboutUs' %}">about us</a></li>
+                    <!-- <li class="active"><a href="index.html">services</a></li>
+                    <li><a href="#">contact</a></li>
+                    <li><a href="../about_us_page/index.html">about us</a></li> -->
+                </ul>
+            </div>
+            <div class="actions">
+                {% if not is_authenticated %}
+               <a  href="{% url 'login' %}"><button   class="signup">login</button></a>  
+                <a href="{% url 'sign_up' %}"><button class="signup">sign up</button></a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+       <!-- main page  -->
+       <main>
+        <!-- <section class="hero">
+            <div class="container">
+                <p>Get accurate and reliable brain tumor segmentation results using our advanced machine learning algorithms</p>
+                <div class="try_feature">Try feature</div>
+                <div class="image">
+                    <img src="{% static 'images/image 69.png' %}" alt="My Image">
+                   
+                </div>
+            </div>
+        </section> -->
+
+        <!-- surivces -->
+        <!-- <section class="service">
+            <div class="container">
+                <div class="service_content">
+                    <p>Brain tumor segmentation helps in several ways. It allows doctors and medical professionals to accurately identify and locate tumors within the brain, which is essential for diagnosis, treatment planning, and monitoring of the disease. Accurate segmentation can also help to determine the size and shape of the tumor, which can aid in surgical planning and radiation therapy.</p>
+                    
+                    <img src="{% static 'images/image 124.png' %}" alt="My Image">
+                </div>
+                <div class="hint">
+                  
+                    <img src="{% static 'images/image 127.png' %}" alt="My Image">
+                    <p>If you are being examined by one of these images please use it</p>
+                </div>
+            </div>
+        </section> -->
+         <!-- message confirm -->
+         <section class="mes_confirm">
+            <div class="container">
+                <div class="content">
+                    <p>Are You Sure To Confirm These Images ? when you choose confirm result will be sent in your mail</p>
+                    <img src="{% static 'images/save_data.gif' %}" width="50"   height="50" alt="My Image">
+                   
+                    <br>
+                    <button    class="submit" type="submit">Submit</button>
+                    <a href="{% url 'home' %}" class="cancel">Cancel</a>
+            
+                </div>
+            </div>
+        </section>
+        
+        <script>
+        function goToSegmentationPage() {
+            window.location.href = "{% url 'Segmentation' %}"; // Replace "Segmentation" with the actual URL or path of your segmentation page
+        }
+        </script>
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+     <!-- footer -->
+     <section class="blank">
+        <div class="container">
+            <div class="box">
+                <h3>contact us</h3>
+                <p>If you want to know more about this project or if you have any question</p>
+                <a href = "mailto: brainware112@gmail.com"> <button>Send Email</button></a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <img src="{% static 'images/logo2.png' %}" alt="">
+        <div class="row">
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">who we are</a></li>
+                    <li><a href="#">our vision </a></li>
+                    <li><a href="#">our core values </a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Medical Providers</a></li>
+                    <li><a href="#">doctors</a></li>
+                    <li><a href="#">hospitals</a></li>
+                    <li><a href="#">clinics</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Terms& Privacy</a></li>
+                    <li><a href="#">privacy policy </a></li>
+                    <li><a href="#">terms of use  </a></li>
+                    <li><a href="#">Follow us </a>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="cont">
+                    <div class="heading">
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Help center </a></li>
+                             <li><a href="#">Contact us </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </form>
+</body>
+</html>

@@ -1,0 +1,535 @@
+
+/* Start Varaiables */
+
+:root {
+  --main-color : #3D1C65;
+  --main-padding-section : 100px;
+}
+/* End Varaiables */
+
+/* Start Scroll Customizion */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: var(--main-color);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #FFFFFF;
+
+}
+/* End Scroll Customizion */
+
+/* Start go to button  Customizion */
+.go-top {
+  background-color: var(--main-color);
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+/* End go to button Customizion */
+
+/* Start Customition Icon */
+/* 
+.fa-facebook-f ,
+.fa-twitter ,
+.fa-linkedin-in
+{
+  color: rgb(24 119 242);
+}
+
+.fa-linkedin {
+  color: rgb(24 119 242);
+} */
+/* 
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+} */
+/* 
+.fa-instagram {
+  color: palevioletred
+} */
+
+/* End Customition Icon */
+
+/* Start Global Rules */
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  /* box-sizing: border-box; */
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+      width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+      width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+/* Start Customition Icon */
+/* 
+.fa-facebook-f ,
+.fa-twitter ,
+.fa-linkedin-in
+{
+  color: rgb(24 119 242);
+}
+
+.fa-linkedin {
+  color: rgb(24 119 242);
+}
+
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-instagram {
+  color: palevioletred
+} */
+
+/* End Global Rules */
+
+/*  Start Some Important Rules */
+
+.heading {
+  margin: 0 0 100px 0 ;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 96px;
+  letter-spacing: 0.02em;
+  color: #542E82;
+  text-transform: capitalize;
+
+}
+/* 
+h1 ,h2 ,h3 ,h4
+{
+  margin: 0;
+} */
+
+/* End Some Important Rules */
+
+/* Start Header */
+/* nav bar */
+
+header {
+  padding: 10px;
+  box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1555555555;
+  padding: 10px;
+  transition: 0.5s;
+  -webkit-transition: 1s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  background-color: white; 
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo-links {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+
+}
+
+header .logo-links a img {
+  width: 80px;
+  position: absolute;
+  top: 10px;
+  height: 50px;
+  left: 70px;
+}
+
+header .logo-links ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+
+}
+
+header .logo-links ul li a::after {
+  content: "";
+  position: absolute;
+  
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+header .logo-links ul li a:hover::after {
+  width: 100%;
+}
+
+header .logo-links ul li.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+header .logo-links ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--main-color);
+  font-size: 1em;
+  font-weight: bold;
+  position: relative;
+}
+
+header .actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  text-decoration: none;
+}
+
+header .actions button{
+  /*width: 100px;
+  */padding: 10px 25px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  cursor: pointer;
+}
+
+header .actions button:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+
+
+header .actions .signup {
+  background-color: var(--main-color);
+  color: white;
+  text-decoration: none;
+}
+/* End Header */
+/* header .actions a{
+  background-color: var(--main-color);
+  color: white;
+  text-decoration: none;
+} */
+
+
+
+/*  body setting  */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    /* background: #DBD5E9; */
+}
+
+.box {
+    width: 500px;
+    height: 700px;
+    /* margin: 0 auto; */
+    /* border: 1px solid black; */
+    padding: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: #3D1C65;
+    left:100px;
+    top:120px;
+    bottom: 50px;
+    position: absolute;
+}
+.box h1{
+    font-size: 45px;
+    font-weight:600;
+    color: #f8f6f8;
+    height: auto;
+    margin-left: 800px;
+    margin-top: 30px;
+    margin: 50px 0 -40px 0;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+  }
+
+  /* login button  */
+  .box button {
+    background-color: #FCD940;
+    color: #301434;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 35px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 450px;
+    left: 90px;
+    width: 270px;
+    height: 60px;
+    box-shadow: 0 4px 4px rgb(164, 126, 163);
+    
+  }
+  .box button a{
+    color: #301434;
+  }
+
+
+  /* the rest buttons  */
+.inputbox{
+    position: relative;
+    width: 250px;
+    top: 150px;
+    margin-top: 30px;
+    left: 70px;
+
+}
+.inputbox input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  outline: none;
+  color: #fff;
+  height: 50px;
+  left: 20px;
+  font-size: 0.8em;
+  background: #3D1C65; /* Replace with your desired color code */
+  font-weight: 50;
+}
+
+
+.inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1.5em;
+    color: #fff;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    top: 10px;
+
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+{
+    color: #f8f6f8;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.8em;
+    padding:  0 10px;
+    background: #3D1C65;
+    position: absolute;
+    top:2px;
+}
+/*  the forget text */
+.box h2{
+    font-size: 16px;
+    font-weight:500;
+    color: #f8f6f8;
+    height: auto;
+    margin-left: 800px;
+    margin-top: 30px;
+    margin: 50px 0 -40px 0;
+    position: absolute;
+    top: 350px;
+    left: 100px;
+}
+/* the gif  */
+.box img {
+    border-radius: 12px;
+    position: absolute;
+    left: 650px;
+    top: 200px;
+    width:600px;
+    height:400px;
+  } 
+
+
+
+
+  /* continue with google  */
+  .googlebutton  button {
+    position: relative;
+    max-width: 320px;
+    display:flex;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    overflow: hidden;
+    /* text-transform: uppercase; */
+    /* vertical-align: middle; */
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    color: #301434;
+    background-color: #fff;
+    cursor: pointer;
+    /* transition: all .6s ease; */
+    top:350px;
+    left: -440px;
+    /* left: -440px; */
+    width: 270px;
+    height: 60px;
+  }
+  
+  .googlebutton button svg {
+    height: 24px;
+  }
+
+
+
+  /* adjust button properties for screens smaller than 768px */
+@media (max-width: 767px) {
+  .googlebutton button {
+    /* adjust button properties for smaller screens */
+    top: 350px;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    position: relative;
+  }
+}
+  
+  /* .googlebutton:hover {
+    transform: scale(1.02);
+  } */
+
+  
+/* the login sticker  */
+  .googlebutton img{
+    position: absolute;
+    top: 750px;
+    left:500px;
+
+  }
+  .googlebutton h3{
+    position: absolute;
+    top: 765px;
+    left:200px;
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size:small;
+  }
+  .googlebutton a{
+    position: absolute;
+    top: 780px;
+    left:400px;
+    color: #91BDF8;
+    text-decoration: none;
+    font-weight: 100;
+    font-size:small;
+  }

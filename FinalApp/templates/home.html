@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+    <!-- using javascript AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Render all element in normal mode File -->
+    <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/normalize.css' %}">
+    <!-- Font Awesome File -->
+    <!-- Main Css File -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/master.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-XXpS0B4iBXr0xhZd71+0qWEHaP6cmne/c5SN9xfuOPug6jDFFDfqFySLF9uWRSsk" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Brainware</title>
+</head>
+<style>
+  .devs {
+    padding: var(--main-padding-section);
+}
+
+.devs .devs-box {
+    width: 1320px;
+    height: auto;
+    background: #3D1C65;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    box-sizing: border-box;
+    padding: 50px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px 30px;
+    position: relative;
+    right: 90px;
+}
+
+.devs .dev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    cursor: pointer;
+}
+
+.devs .dev:hover {
+    transform: scale(1.05);
+}
+
+.devs .dev .image {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.devs .dev .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+.devs .dev .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-align: center;
+}
+
+.devs .dev .details .name {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+}
+
+.devs .dev .details .job {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: capitalize;
+}
+
+.devs .dev .details .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.devs .dev .details i {
+    font-size: 1.5em;
+}
+
+/* End developers Section */
+
+
+.use {
+  padding: var(--main-padding-section);
+  background-color: #E6E1F6;
+}
+
+.use .heading {
+  margin-bottom: 100px;
+}
+
+.use .use-content {
+  width: 553px;
+  height: 520px;
+  background: #FFFFFF;
+  border-radius: 49px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  position: relative;
+}
+
+.use .use-content::after {
+  content: url(../images/Hand-drawn-Arrow-icon-premium-vector-PNG\ 1.png);
+  position: absolute;
+  top: -439px;
+  right: -400px;
+}
+
+.use .use-content h3 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  letter-spacing: 0.02em;
+  color: #542E82;
+}
+
+.use .use-content p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  color: #683AA0;
+}
+
+.use .use-content .icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Updated */
+  gap: 30px;
+}
+
+.use .use-content .icon img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-left: auto; /* Added */
+  margin-bottom: 110px;
+  margin-left: 40px;
+}
+
+.use .use-content button {
+  width: 280px;
+  height: 72px;
+  background: #3D1C65;
+  border-radius: 20px;
+  color: white;
+  font-size: 2em;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-top: 80%; /* Added */
+  margin-left: -250px;
+}
+.service-2 .service-content .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.hero .container p {
+width: 507px;
+height: 144px;
+font-family: 'Inter';
+font-weight: 400;
+font-size: 25px;
+line-height: 36px;
+color: #03C1D4;
+
+}
+
+
+
+</style>
+<body>
+    <!-- anchor element to scroll to top -->
+    <a href="#home">
+        <i class="go-top" class="fa-solid fa-arrow-up"></i>
+    </a>
+    
+  
+
+    <!-- Nav bar -->
+    <header>
+        <div class="container" >
+
+            <div class="logo-links" >
+                <a href="#">
+                    <img src="{% static 'images/logo1.png' %}" alt="My Image">
+                </a>
+                <ul>
+                    <li ><a href="#home">home</a></li>
+                    <li><a href="#service">services</a></li>
+                    <li><a href="#AboutUS">contact</a></li>
+                    <li><a href="{% url 'AboutUs' %}">about us</a></li>
+                    <li><a href="{% url 'notification' %}">Profile</a></li>
+                </ul>
+            </div>
+
+            <!-- @@@@@@@@@@@  the first gif in thi   spage @@@@@@@@@@@@@@@@ -->
+               <img src="images/04eba44b89ec18680db3a64e44f9c9e9.gif" alt="">
+            <div class="actions">
+                {% if not is_authenticated %}
+               <a  href="{% url 'login' %}"><button   class="signup">login</button></a>  
+                <a href="{% url 'sign_up' %}"><button class="signup">sign up</button></a>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                  
+                    <!-- ++++++++++++++++++++++++++++++++++++++ -->
+                    <a id="pro" href="#" > Hello, 
+                    {{request.user.username}}</a>
+                {% endif %}
+               
+                
+                
+            </div>
+        </div>
+    </header>
+
+</script>
+
+
+
+<!-- ########### using the js link to animate divs            ############################### -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+
+
+
+
+    <!-- main bage -->
+    <main>
+        <section class="hero" id="home">
+            <img src="{% static 'images/brain.gif' %}" alt="">
+            <div class="container">
+                <h1>
+                    Now you can scan your brain images easily...
+                </h1>
+                <p>Get the most accurate results about brain detection and segmentation and more services to discover.</p>
+                
+                {% if not user.is_authenticated %}
+                <div class="get-started">
+                    <a href="{% url 'login' %}">Get Started</a>
+                    <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                </div>
+                {% else %}
+                <div class="get-started">
+                    <a href="#service">Get Started</a>
+                </div>
+                {% endif %}
+                   
+            </div>
+<!--             
+            <div class="circle1" >
+                <img src="images/brain1.jpg"  class="photo1" width="100%" height="100%">
+            </div>
+            <div class="circle2">
+                <img src="images/brain2.jpg" width="100%" height="100%">
+            </div>
+            </div>
+            <div class="circle3">
+                <img src="images/brain3.png" width="100%" height="100%">
+            </div> -->
+        </section>
+
+        <!-- our survices -->
+        <section class="service" id="service">
+            <div class="container">
+                <div class="heading-content">
+                    <img src="{% static 'images/image 72.png' %}" alt="My Image">
+                    <h1 class="heading">Discover our services </h1>
+                </div>
+                <div class="service-content" data-aos="fade-right"  data-aos-duration="2000">
+                    <h2>Brain tumor detection</h2>
+                    <div class="wrap">
+                        <p>Brain tumor detection utilizes deep learning algorithms to automatically detect the presence of tumors or other abnormalities in MR images of the brain. By simply uploading an MR image, users can receive information about potential brain tumors or lesions without the need for a laborious diagnostic process.
+                        </p>
+                        <img src="{% static 'images/image 73.png' %}" alt="My Image">
+                    </div>
+                    <div class="hint">
+                        <p>You can now sign in and try this feature </p>
+                        <a href="{% url 'Detection' %}"><button>Try features</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-2">
+            <div class="container">
+                <h1 class="heading">Brain Tumor segmentation</h1>
+                <div class="service-content"  data-aos="fade-left"  data-aos-duration="2000" >
+                    <div class="wrap">
+                        <img src="{% static 'images/ani.gif' %}" width="500" height="400" border-radius="22"   alt="My Image">
+                        <p>
+                            Deep learning automates brain tumor segmentation in MRI images, providing precise tumor boundary information. Users upload MRI images to obtain detailed data for treatment planning and monitoring. This approach improves efficiency, accuracy, and eliminates manual analysis.
+                        </p>
+                    </div>
+                    <div class="hint">
+                        <p>You can now sign in and try this feature </p>
+                        <a href="{% url 'Segmentation' %}"><button>try features</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- how to use it section -->
+        <section class="use">
+            <!-- <img class="arrow" src="{% static 'images/Hand-drawn-Arrow-icon-premium-vector-PNG 1.png' %}" > -->
+            <div class="container"   data-aos="flip-down"  data-aos-duration="2000">
+                <h1 class="heading">How to use it</h1>
+                <div class="use-content">
+                    <h3 class="title">Upload your images </h3>
+                    <p>fast and easy way</p>
+                    <div class="icon">
+                        <a href="">
+                            <img src="{% static 'images/photo_2023-07-03_01-30-24.jpg' %}" alt="My Image" width="180px" height="130px" border-radius="50%">
+                    <!-- <p>Drag and drop your image </p> -->
+                        </a>
+                        
+                    <button>submit</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- How you will get the results -->
+        <section class="how">
+            <div class="container">
+                <h1 class="heading"  data-aos="fade-right"  data-aos-duration="2000">How you will get the results?</h1>
+<!--      $$$$$$$$$$$$$4 the second gif $$$$$$$$$$$$$$$$$$$$$$$$$ -->
+                <img src= "{% static 'images/image email.gif' %} "   alt=""  data-aos="fade-left"  data-aos-duration="2000">
+                <div class="how-container">
+                <div class="how-container">
+                    <div class="how-content">
+                        <p>
+                            After you uploaded the image you will get an email to inform you that “ the image successfully  uploaded and will get results as soon as possible by an email “ including the result
+                            attachments like result image and you condition with a simple explanation  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- dr profile -->
+       
+        </section>
+        
+        <!-- our developer -->
+        <section class="devs">
+            <div class="container">
+                <div class="devs-box"  data-aos="zoom-out"  data-aos-duration="2000">
+                    <div class="dev">
+                        <div class="image">
+                            <img src="{% static 'images/mohamed ashraf.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="details">
+                            <h3 class="name">Mohammed Ashraf</h3>
+                            <!-- <p class="job">team leader <br><br> Full Stack developer </p> -->
+                            <div class="icons">
+                                <a href="#">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="dev">
+                        <div class="image">
+                            <img src="{% static 'images/ahmed hassan.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="details">
+                            <h3 class="name">Ahmed Hassan </h3>
+                            <!-- <p class="job">Full Stack developer </p> -->
+                            <div class="icons">
+                                <a href="#">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="dev">
+                        <div class="image">
+                            <img src="{% static 'images/abdallah hassan.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="details">
+                            <h3 class="name">Abdallah Hassan </h3>
+                            <!-- <p class="job">uI/uX designer <br> <br> frontend developer</p> -->
+                            <div class="icons">
+                                <a href="#">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="dev">
+                        <div class="image">
+                            <img src="{% static 'images/yasmeen.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="details">
+                            <h3 class="name">Yasmeen Abdelazim</h3>
+                            <!-- <p class="job">flutter developer </p> -->
+                            <div class="icons">
+                                <a href="">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="dev">
+                        <div class="image">
+                            <img src="{% static 'images/omar.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="details">
+                            <h3 class="name">Omar Eid </h3>
+                            <!-- <p class="job">UI Designer <br><br> Full stack developer</p> -->
+                            <div class="icons">
+                                <a href="">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="dev">
+                        <div class="image">
+                            <img src="{% static 'images/menna.jpg' %}" alt="My Image">
+                        </div>
+                        <div class="details">
+                            <h3 class="name">Menna gamal </h3>
+                            <!-- <p class="job">frontend developer </p> -->
+                            <div class="icons">
+                                <a href="#">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-google"></i>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <section class="blank" id="contactUS">
+            <div class="container">
+                <div class="box">
+                    <h3>contact us</h3>
+                    <p>If you want to know more about this project or if you have any question</p>
+                    <a href = "mailto: brainware112@gmail.com"> <button>Send Email</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="footer">
+    <div class="container">
+        <img src="{% static 'images/logo2.png' %}" alt="">
+        <div class="row">
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">who we are</a></li>
+                    <li><a href="#">our vision </a></li>
+                    <li><a href="#">our core values </a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Medical Providers</a></li>
+                    <li><a href="#">doctors</a></li>
+                    <li><a href="#">hospitals</a></li>
+                    <li><a href="#">clinics</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Terms& Privacy</a></li>
+                    <li><a href="#">privacy policy </a></li>
+                    <li><a href="#">terms of use  </a></li>
+                    <li><a href="#">Follow us </a>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="cont">
+                    <div class="heading">
+                        <ul>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Help center </a></li>
+                             <li><a href="#">Contact us </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

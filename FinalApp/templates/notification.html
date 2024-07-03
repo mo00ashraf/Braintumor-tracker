@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Render all element in normal mode File -->
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/css_notify/normalize.css' %}">
+  <!-- Font Awesome File -->
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/css_notify/all.min.css' %}">
+  <!-- Main Css File -->
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/css_notify/style.css' %}">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Brainware</title>
+</head>
+<style>
+  .image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+</style>
+
+<body>
+    <form  action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+  <!-- nav bar -->
+  <header>
+    <div class="parent-header">
+     <div class="logo">
+        <img src="{% static 'images/logooo.png' %}" alt="My Image">
+     </div>
+         <ul>
+             <li><a href="{% url 'home' %}">Home</a></li>
+             <li><a href="{% url 'AboutUs' %}">About Us</a></li>
+             <li class="active-link"><a href="{% url 'notification' %}" >Profile</a></li>
+             <li><a href="{% url 'logout' %}">Log Out</a></li>
+         </ul>
+    </div>
+ </header>
+  <main> 
+    <!-- card left of profile -->
+    <nav>
+      {% if user.is_authenticated %}
+      {% if user.userprofile.profile_picture %}
+      <img src="{{ user.userprofile.profile_picture.url }}" width="120" height="120" class="image-container" style="margin-top: -20px;" style="border-radius: 50%;" />
+      {% else %}
+      <img src="{% static 'img/Ellipse 1.png' %}" alt="" class="image--cover" />
+      {% endif %}
+      {% endif %}
+      <div class="links">
+        <h2><a id="pro" href="#">{{request.user.first_name}} {{request.user.last_name}}</h2>
+        <a href="{% url 'notification' %}">
+          <span>
+            <img src="{% static 'images/icons/Vector.png' %}" alt="My Image">
+          </span>
+          <p>Notifications</p></a>
+        <a href="{% url 'HistoryD' %}">
+          <span>
+            <img src="{% static 'images/icons/archivebook.png' %}" alt="My Image">
+        
+          </span>
+          <p>History</p></a>
+        <a href="#">
+          <span>
+            <img src="{% static 'images/icons/statusup.png' %}" alt="My Image">
+            
+          </span>
+          <p>Follow up</p>
+        </a>
+        <a href="#">
+          <span>
+            <img src="{% static 'images/icons/people.png' %}" alt="My Image">
+            
+          </span>
+          <p>Support Community</p></a>
+        <a href="{% url 'edit_profile' %}">
+          <span>
+            
+            <img src="{% static 'images/icons/useredit.png' %}" alt="My Image">
+           
+          </span>
+          
+          <p class="active-link">Edit Profile</p>
+        </a>
+        <a href="#">
+          <span>
+            <img src="{% static 'images/icons/setting2.png' %}" alt="My Image">
+            
+          </span>
+          <p>Settings</p></a>
+      </div>
+    </nav>
+    <!-- card right -->
+    <section class="one">
+        <div class="right">
+            <div class="div-one">
+                <div class="image">
+                    <p id="p1">You don’t have any notifications yet </p>  
+                </div>
+                <div class="parnt-profile">
+                  <div class="cont">
+                    <p id="p2">We will notify you about upcoming results , emails and notification from your support group</p>
+                    <img src="{% static 'images/image 40.png' %}" alt="My Image">
+                   
+                  </div>
+             </div>
+        </div>
+     </section>
+  </main>
+</body>
+
+</html>

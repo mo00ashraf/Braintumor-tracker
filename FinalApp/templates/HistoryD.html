@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Render all element in normal mode File -->
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/cssD/normalize.css' %}">
+
+  <!-- Font Awesome File -->
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/cssD/all.min.css' %}">
+
+  <!-- Main Css File -->
+  <link rel="stylesheet" type="text/css" href="{% static 'FinalApp/cssD/style.css' %}">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Brainware</title>
+</head>
+<style>
+  .image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* CSS for the "Back to profile" link */
+nav .links .details a {
+  color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: var(--main-color);
+    display: flex;
+  align-items: center;
+  gap: 40px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  cursor: pointer;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  
+}
+
+nav .links .details a:hover {
+  background-color: #333;
+}
+
+
+
+</style>
+
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+  <!-- nav bar -->
+  <header>
+    <div class="parent-header">
+     <div class="logo">
+      <img src="{% static 'images/logooo.png' %}" alt="My Image">
+     </div>
+         <ul>
+             <li><a href="{% url 'home' %}">Home</a></li>
+             <li><a href="{% url 'AboutUs' %}">About Us</a></li>
+             <li class="active-link"><a href="{% url 'notification' %}" >Profile</a></li>
+             <li><a href="{% url 'logout' %}">Log Out</a></li>
+         </ul>
+    </div>
+ </header>
+  <main> 
+    <!-- card left of profile -->
+    <nav>
+      {% if user.is_authenticated %}
+      {% if user.userprofile.profile_picture %}
+      <img src="{{ user.userprofile.profile_picture.url }}" width="120" height="120" class="image-container" style="margin-bottom: -50px;" style style="border-radius: 50%;" />
+      {% else %}
+      <img src="{% static 'img/Ellipse 1.png' %}" alt="" class="image--cover" />
+      {% endif %}
+      {% endif %}
+      <div class="links">
+        <h2><a id="pro" href="#">{{request.user.first_name}} {{request.user.last_name}}</h2>
+        <a href="{% url 'HistoryD' %}">
+          <p>Brain tumor detection</p></a>
+        <a href="{% url 'HistorySeg' %}">
+          <p>Brain tumor segmentation</p></a>
+           <div class="details">
+            <a href="{% url 'notification' %}" class="back-to-profile">Back to profile</a>
+
+           
+        </div>
+      </div>
+    </nav>
+     <section class="content">
+      <div class="right">
+        <div class="hint">
+          <img src="{% static 'images/connection 1.png' %}" alt="My Image">
+        
+        <p>Your Brain Tumor Detection History</p> 
+        </div>
+        <div class="history">
+          <table>
+            <thead>
+              <tr>
+            <th>Image ID</th>
+              <th>Uploaded Image </th>
+              <th>Results</th>
+              <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>      
+                {% for image in entry %}
+        
+                <tr>
+                  <th> {{forloop.counter}} </th> 
+                  <th> <a href="{{ image.url_img }}" target="_blank"><img src="{{ image.url_img }}"  height="100px" /></a>
+                    <th>{{ image.result}}</th>
+                  <th>{{ image.date_on}}</th>
+                  </th>
+                  
+                </tr>
+  
+              {% endfor %}
+            <!-- <tr>
+              <td><img src="images/image 80.png" alt=""></td>
+              <td>Tumor</td>
+              <td>17/3/2023</td>
+            </tr>
+            <tr>
+              <td><img src="images/image 80.png" alt=""></td>
+              <td>Tumor</td>
+              <td>17/3/2023</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+    </form>
+</body>
+
+</html>

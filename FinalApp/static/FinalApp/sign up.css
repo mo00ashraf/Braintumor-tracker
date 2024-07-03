@@ -1,0 +1,578 @@
+
+/* Start Varaiables */
+
+:root {
+  --main-color : #3D1C65;
+  --main-padding-section : 100px;
+}
+/* End Varaiables */
+
+/* Start Scroll Customizion */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: var(--main-color);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #FFFFFF;
+
+}
+/* End Scroll Customizion */
+
+/* Start go to button  Customizion */
+.go-top {
+  background-color: var(--main-color);
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+/* End go to button Customizion */
+
+/* Start Customition Icon */
+/* 
+.fa-facebook-f ,
+.fa-twitter ,
+.fa-linkedin-in
+{
+  color: rgb(24 119 242);
+}
+
+.fa-linkedin {
+  color: rgb(24 119 242);
+} */
+/* 
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+} */
+/* 
+.fa-instagram {
+  color: palevioletred
+} */
+
+/* End Customition Icon */
+
+/* Start Global Rules */
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  /* box-sizing: border-box; */
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+      width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+      width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+/* Start Customition Icon */
+/* 
+.fa-facebook-f ,
+.fa-twitter ,
+.fa-linkedin-in
+{
+  color: rgb(24 119 242);
+}
+
+.fa-linkedin {
+  color: rgb(24 119 242);
+}
+
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-instagram {
+  color: palevioletred
+} */
+
+/* End Global Rules */
+
+/*  Start Some Important Rules */
+
+.heading {
+  margin: 0 0 100px 0 ;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 96px;
+  letter-spacing: 0.02em;
+  color: #542E82;
+  text-transform: capitalize;
+
+}
+/* 
+h1 ,h2 ,h3 ,h4
+{
+  margin: 0;
+} */
+
+/* End Some Important Rules */
+
+/* Start Header */
+/* nav bar */
+
+header {
+  padding: 10px;
+  box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1555555555;
+  padding: 10px;
+  transition: 0.5s;
+  -webkit-transition: 1s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  background-color: white; 
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo-links {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+
+}
+
+header .logo-links a img {
+  width: 80px;
+  position: absolute;
+  top: 10px;
+  height: 50px;
+  left: 70px;
+}
+
+header .logo-links ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+
+}
+
+header .logo-links ul li a::after {
+  content: "";
+  position: absolute;
+  
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+header .logo-links ul li a:hover::after {
+  width: 100%;
+}
+
+header .logo-links ul li.active a::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+header .logo-links ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--main-color);
+  font-size: 1em;
+  font-weight: bold;
+  position: relative;
+}
+
+header .actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+header .actions button{
+  /*width: 100px;
+  */padding: 10px 25px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  font-weight: bold;
+  font-size: 1em;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  cursor: pointer;
+}
+
+header .actions button:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+
+
+header .actions .signup {
+  background-color: var(--main-color);
+  color: white;
+  background-color: #3D1C65;
+}
+/* End Header */
+
+
+
+
+
+/* Container for the form */
+/* Container for the form */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Roboto:wght@100;300;400;500&family=Work+Sans:wght@200;300;500;600;700;800&display=swap');
+
+*
+{
+  
+    font-family: 'Inter' , sans-serif;
+}
+
+/*    ############# the body ######################## */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    /* background: #DBD5E9; */
+}
+.box h1{
+  font-size: 45px;
+  font-weight:600;
+  color: #3D1C65;
+  height: auto;
+  margin-left: 800px;
+  margin-top: 30px;
+  margin: 50px 0 -40px 0;
+  position: absolute;
+  top: 40px;
+  left: 150px;
+}
+
+
+
+.box {
+  width: 1300px;
+  height: 1000px;
+  /* margin: 0 auto; */
+  /* border: 1px solid black; */
+  padding: 20px;
+  margin-top: 80px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #DBD5E9;
+  left:100px;
+  top:50px;
+  bottom: 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  
+.inputbox{
+  position: relative;
+  width: 400px;
+  top: 150px;
+  margin: 20px 0;
+  left: 70px;
+ 
+}
+.inputbox input{
+  width: 100%;
+  padding: 20px;
+  border:1px solid #3D1C65;
+  border-radius: 20px;
+  outline: none;
+  color: #3D1C65 ;
+  height: 30px;
+  left: 20px;
+  font-size: 0.8em;
+  background: #DBD5E9;
+  font-weight: 50;
+
+
+}
+
+.inputbox span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1.5em;
+  color:#3D1C65;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  top: 10px;
+
+}
+.inputbox select{
+  width: 390px;
+  padding: 30px;
+  border:1px solid #3D1C65;
+  border-radius: 20px;
+  outline: none;
+  color: #3D1C65 ;
+  height: 30px;
+  left: 20px;
+  font-size: 0.8em;
+  background: #DBD5E9;
+  font-weight: 40;
+}
+.inputbox select.span{
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1.5em;
+  color:#3D1C65;
+  /* text-transform: uppercase; */
+  transition: 0.5s;
+  top: 20px;
+}
+/* .inputbox option{
+  display: contents;
+  position: absolute;
+} */
+
+.inputbox select:focus-visible + span {
+  color: #3D1C65;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8em;
+  padding: 0 10px;
+  background: #DBD5E9;
+  position: absolute;
+  top: 2px;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+{
+  color: #3D1C65;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.8em;
+  padding:  0 10px;
+  background: #DBD5E9;
+  position: absolute;
+  top:2px;
+}
+
+.inputbox span.age, 
+.inputbox span.gender {
+  font-weight: bold;
+  color: #3D1C65;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+
+
+
+ .googlebutton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.googlebutton button {
+
+  display: flex;
+  position: relative;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #3D1C65;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  height: 70px;
+  margin-top: 60px;
+  width: 350px;
+  left: 230px;
+}
+
+.googlebutton button svg {
+  height: 24px;
+  margin-right: 1rem;
+}
+
+.googlebutton button:hover {
+  background-color: #3367d6;
+}
+
+
+
+
+/* Create account button  */
+.create-account {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #3D1C65;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem; /* add some margin to the bottom */
+  padding: 10px 20px;
+ 
+    border-radius: 20px;
+    font-size: 16px;
+   
+    cursor: pointer;
+    position: absolute;
+    top:620px;
+    left: 700px;
+    width: 350px;
+    height: 70px;
+    box-shadow: 0 4px 4px rgb(164, 126, 163);
+}
+
+.create-account:hover {
+  background-color: #8266a4;
+}
+
+
+.already {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 50px;
+}
+
+.already a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+.already a:hover {
+  text-decoration: underline;
+}
+
+.googlebutton button svg {
+  height: 24px;
+}
+/*######################## the gif ################ */
+.box img {
+  border-radius: 12px;
+  position: absolute;
+  left: 600px;
+  top: 150px;
+  width:600px;
+  height:400px;
+} 
+
+
+
+
